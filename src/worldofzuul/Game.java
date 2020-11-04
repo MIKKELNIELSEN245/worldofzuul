@@ -87,6 +87,9 @@ public class Game
         else if (commandWord == CommandWord.MOVE) {
             movePlayer(command);
         }
+        else if (commandWord == commandWord.EXAMINE){
+            examineObject(command);
+        }
         return wantToQuit;
     }
 
@@ -119,7 +122,14 @@ public class Game
         }
     }
 
-    private void movePlayer(Command command)
+    //Method for examining objects in room
+    private void examineObject(Command command){
+        if(!command.hasSecondWord()) {
+            System.out.println("Examine what?");
+            return;
+        }
+    }
+
     {
         if(!command.hasSecondWord()) {
             System.out.println("Move where?");
