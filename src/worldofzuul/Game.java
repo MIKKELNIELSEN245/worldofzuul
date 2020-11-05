@@ -121,7 +121,7 @@ public class Game
             System.out.println(currentRoom.getLongDescription());
         }
     }
-    
+
 
     private void examineObject(Command command){
         if (!command.hasSecondWord()) {
