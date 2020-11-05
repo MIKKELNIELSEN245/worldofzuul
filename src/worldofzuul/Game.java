@@ -121,20 +121,33 @@ public class Game
             System.out.println(currentRoom.getLongDescription());
         }
     }
+    
 
-    //Method for examining objects in room
     private void examineObject(Command command){
-        if(!command.hasSecondWord()) {
+        if (!command.hasSecondWord()) {
             System.out.println("Examine what?");
             return;
         }
-    }
 
-    {
-        if(!command.hasSecondWord()) {
+        if (!command.hasSecondWord()) {
             System.out.println("Move where?");
             return;
         }
+
+    }
+
+    //Method for examining objects in room
+    private void movePlayer(Command command) {
+        if (!command.hasSecondWord()) {
+            System.out.println("Examine what?");
+            return;
+        }
+
+        if (!command.hasSecondWord()) {
+            System.out.println("Move where?");
+            return;
+        }
+
 
         String secondWord = command.getSecondWord();
         int x = player.pos.x;
@@ -159,6 +172,7 @@ public class Game
             System.out.println("Where do you want to go?");
             return;
         }
+
 
         if(canPlayerMoveToPoint(x, y)){
             System.out.println("You walked " + secondWord + ".");
